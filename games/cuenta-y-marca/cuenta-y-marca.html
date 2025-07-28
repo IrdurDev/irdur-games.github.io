@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cuenta y Marca - Irdur Games</title>
+    <link rel="stylesheet" href="cuenta-y-marca.css">
+</head>
+<body>
+    <!-- Contenedor para las partículas de fondo animadas -->
+    <div class="background-particles-cym">
+        <div class="particle-cym circle-particle-cym"></div>
+        <div class="particle-cym square-particle-cym"></div>
+        <div class="particle-cym triangle-particle-cym"></div>
+        <div class="particle-cym circle-particle-cym"></div>
+        <div class="particle-cym square-particle-cym"></div>
+        <div class="particle-cym triangle-particle-cym"></div>
+        <div class="particle-cym circle-particle-cym"></div>
+        <div class="particle-cym square-particle-cym"></div>
+        <div class="particle-cym triangle-particle-cym"></div>
+        <div class="particle-cym circle-particle-cym"></div>
+        <div class="particle-cym square-particle-cym"></div>
+        <div class="particle-cym triangle-particle-cym"></div>
+    </div>
+
+    <div class="game-container">
+        <h1 class="game-title">Cuenta y Marca</h1>
+        <p class="game-description">Observa los objetos y marca la cantidad que hay de cada uno.</p>
+
+        <div class="objects-display" id="objectsDisplay">
+            <!-- Los objetos se generarán aquí con JavaScript -->
+        </div>
+
+        <div class="input-section">
+            <div class="input-group">
+                <div class="object-preview circle-preview"></div>
+                <label for="countCircle">Círculos:</label>
+                <input type="number" id="countCircle" min="0" value="0">
+            </div>
+            <div class="input-group">
+                <div class="object-preview square-preview"></div>
+                <label for="countSquare">Cuadrados:</label>
+                <input type="number" id="countSquare" min="0" value="0">
+            </div>
+            <div class="input-group">
+                <div class="object-preview triangle-preview"></div>
+                <label for="countTriangle">Triángulos:</label>
+                <input type="number" id="countTriangle" min="0" value="0">
+            </div>
+        </div>
+
+        <p class="game-status" id="gameStatus">¡Presiona "Nueva Ronda" para empezar!</p>
+
+        <div class="button-group">
+            <button id="checkButton" class="game-button check-button" disabled>Comprobar</button>
+            <button id="newRoundButton" class="game-button new-round-button">Nueva Ronda</button>
+            <a href="../../index.html" class="game-button back-home-button">Regresar al Inicio</a>
+        </div>
+    </div>
+
+    <script src="cuenta-y-marca.js"></script>
+</body>
+</html>

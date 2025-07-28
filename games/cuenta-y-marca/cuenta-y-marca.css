@@ -1,0 +1,358 @@
+/* Variables CSS para colores vibrantes y accesibles */
+:root {
+    --color-fondo-principal: #1a1a2e; /* Azul oscuro casi negro */
+    --color-fondo-secundario: #16213e; /* Azul oscuro un poco más claro */
+    --color-texto-principal: #e0e0e0; /* Blanco roto para buena legibilidad */
+    --color-acento-claro: #e94560; /* Rojo coral brillante */
+    --color-acento-oscuro: #533483; /* Morado intenso */
+    --color-borde-boton: #0f3460; /* Azul oscuro para bordes de botón */
+    --color-hover-boton: #0f4c75; /* Azul medio para hover */
+
+    /* Colores específicos para los objetos CSS */
+    --color-circle: #ffea00;   /* Amarillo eléctrico */
+    --color-square: #00ffff;   /* Cian brillante */
+    --color-triangle: #ff1493; /* Rosa neón */
+
+    --color-success: #32cd32;  /* Verde lima */
+    --color-error: #ff0000;    /* Rojo puro */
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: var(--color-fondo-principal);
+    color: var(--color-texto-principal);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    overflow: hidden; /* Cambiado a hidden para un mejor control de las partículas */
+    padding: 20px;
+    box-sizing: border-box;
+    position: relative; /* Necesario para posicionar las partículas */
+}
+
+/* --- Estilos para las partículas de fondo --- */
+.background-particles-cym {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: -1; /* Detrás de todo el contenido del juego */
+    pointer-events: none; /* No interactúa con el ratón */
+}
+
+.particle-cym {
+    position: absolute;
+    opacity: 0.08; /* Muy sutil */
+    animation: moveParticlesCym 50s infinite linear; /* Animación base lenta */
+}
+
+/* Definición de formas y colores para las partículas */
+.circle-particle-cym {
+    width: 60px;
+    height: 60px;
+    background-color: var(--color-circle);
+    border-radius: 50%;
+}
+.square-particle-cym {
+    width: 70px;
+    height: 70px;
+    background-color: var(--color-square);
+    border-radius: 10px;
+}
+.triangle-particle-cym {
+    width: 0;
+    height: 0;
+    border-left: 35px solid transparent;
+    border-right: 35px solid transparent;
+    border-bottom: 60px solid var(--color-triangle);
+}
+
+/* Posiciones iniciales y duraciones de animación variadas para cada partícula */
+.particle-cym:nth-child(1) { left: 10%; top: 15%; animation-duration: 40s; } /* Círculo */
+.particle-cym:nth-child(2) { left: 80%; top: 5%; animation-duration: 55s; }  /* Cuadrado */
+.particle-cym:nth-child(3) { left: 30%; top: 70%; animation-duration: 48s; } /* Triángulo */
+.particle-cym:nth-child(4) { left: 5%; top: 40%; animation-duration: 60s; }  /* Círculo */
+.particle-cym:nth-child(5) { left: 60%; top: 85%; animation-duration: 38s; } /* Cuadrado */
+.particle-cym:nth-child(6) { left: 90%; top: 50%; animation-duration: 52s; } /* Triángulo */
+.particle-cym:nth-child(7) { left: 25%; top: 5%; animation-duration: 42s; }  /* Círculo */
+.particle-cym:nth-child(8) { left: 70%; top: 30%; animation-duration: 65s; } /* Cuadrado */
+.particle-cym:nth-child(9) { left: 45%; top: 90%; animation-duration: 35s; } /* Triángulo */
+.particle-cym:nth-child(10) { left: 50%; top: 60%; animation-duration: 58s; } /* Círculo */
+.particle-cym:nth-child(11) { left: 5%; bottom: 5%; animation-duration: 47s; } /* Cuadrado */
+.particle-cym:nth-child(12) { left: 95%; bottom: 10%; animation-duration: 62s; } /* Triángulo */
+
+
+/* Animación de movimiento para las partículas */
+@keyframes moveParticlesCym {
+    0% { transform: translate(0, 0) scale(1); }
+    25% { transform: translate(15vw, 20vh) scale(1.05); }
+    50% { transform: translate(30vw, -10vh) scale(1.1); }
+    75% { transform: translate(45vw, 25vh) scale(1.05); }
+    100% { transform: translate(0, 0) scale(1); }
+}
+
+
+.game-container {
+    background-color: var(--color-fondo-secundario);
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5);
+    text-align: center;
+    max-width: 800px;
+    width: 100%;
+    border: 2px solid var(--color-acento-claro);
+    box-sizing: border-box;
+    position: relative; /* Asegura que el contenedor del juego esté por encima de las partículas */
+    z-index: 1;
+}
+
+.game-title {
+    font-size: 3em;
+    color: var(--color-acento-claro);
+    margin-bottom: 10px;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.4);
+}
+
+.game-description {
+    font-size: 1.1em;
+    margin-bottom: 25px;
+    color: var(--color-texto-principal);
+}
+
+.objects-display {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 15px; /* Espacio entre los objetos */
+    min-height: 200px; /* Altura mínima para el área de objetos */
+    background-color: var(--color-fondo-principal);
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 30px;
+    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.3);
+    overflow: auto; /* Permite scroll si hay muchos objetos */
+}
+
+/* --- Estilos para los objetos CSS --- */
+.object-item {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    color: var(--color-texto-principal); /* Si se usa texto dentro */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    transition: transform 0.2s ease;
+}
+
+.object-item:hover {
+    transform: scale(1.1);
+}
+
+/* Círculo */
+.circle {
+    background-color: var(--color-circle);
+    border-radius: 50%;
+}
+
+/* Cuadrado */
+.square {
+    background-color: var(--color-square);
+    border-radius: 5px; /* Ligeramente redondeado */
+}
+
+/* Triángulo (usando bordes) */
+.triangle {
+    width: 0;
+    height: 0;
+    border-left: 20px solid transparent;
+    border-right: 20px solid transparent;
+    border-bottom: 40px solid var(--color-triangle); /* Color del triángulo */
+    background-color: transparent; /* Asegurarse de que no haya fondo */
+    box-shadow: none; /* Los triángulos no necesitan sombra de caja */
+}
+.triangle:hover {
+    transform: scale(1.1);
+}
+
+/* Estilos para la previsualización de objetos en los inputs */
+.object-preview {
+    width: 30px;
+    height: 30px;
+    margin-right: 10px;
+    display: inline-block;
+    vertical-align: middle;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+}
+.circle-preview {
+    background-color: var(--color-circle);
+    border-radius: 50%;
+}
+.square-preview {
+    background-color: var(--color-square);
+    border-radius: 5px;
+}
+.triangle-preview {
+    width: 0;
+    height: 0;
+    border-left: 15px solid transparent;
+    border-right: 15px solid transparent;
+    border-bottom: 30px solid var(--color-triangle);
+    background-color: transparent;
+    box-shadow: none;
+}
+
+
+.input-section {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 25px;
+    margin-bottom: 30px;
+}
+
+.input-group {
+    display: flex;
+    align-items: center;
+    background-color: var(--color-fondo-principal);
+    padding: 10px 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+    border: 1px solid var(--color-acento-oscuro);
+}
+
+.input-group label {
+    font-size: 1.1em;
+    margin-right: 10px;
+    color: var(--color-texto-principal);
+}
+
+.input-group input[type="number"] {
+    width: 70px;
+    padding: 8px;
+    border: 1px solid var(--color-acento-oscuro);
+    border-radius: 5px;
+    background-color: var(--color-fondo-secundario);
+    color: var(--color-texto-principal);
+    font-size: 1.1em;
+    text-align: center;
+    -moz-appearance: textfield; /* Para Firefox */
+}
+/* Ocultar flechas de input type="number" en WebKit (Chrome, Safari) */
+.input-group input[type="number"]::-webkit-outer-spin-button,
+.input-group input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+
+.game-status {
+    font-size: 1.4em;
+    font-weight: bold;
+    margin-bottom: 30px;
+    min-height: 1.5em; /* Asegura espacio para el mensaje */
+}
+
+.game-status.success {
+    color: var(--color-success);
+}
+
+.game-status.error {
+    color: var(--color-error);
+}
+
+.button-group {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.game-button {
+    background-color: var(--color-acento-claro);
+    color: var(--color-texto-principal);
+    padding: 12px 25px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.1em;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    text-decoration: none; /* Para el botón de regresar al inicio */
+    display: inline-flex; /* Para centrar el texto si es un <a> */
+    justify-content: center;
+    align-items: center;
+}
+
+.game-button:hover {
+    background-color: var(--color-hover-boton);
+    transform: translateY(-3px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);
+}
+
+.game-button:active {
+    transform: translateY(-1px);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.game-button[disabled] {
+    opacity: 0.6;
+    cursor: not-allowed;
+    box-shadow: none;
+    transform: none;
+}
+
+/* Media Queries para responsividad */
+@media (max-width: 600px) {
+    .game-title {
+        font-size: 2.2em;
+    }
+
+    .game-description {
+        font-size: 1em;
+    }
+
+    .objects-display {
+        min-height: 150px;
+        padding: 15px;
+    }
+
+    .object-item {
+        width: 30px;
+        height: 30px;
+    }
+    .triangle {
+        border-left: 15px solid transparent;
+        border-right: 15px solid transparent;
+        border-bottom: 30px solid var(--color-triangle);
+    }
+
+    .input-group {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 8px 15px;
+    }
+    .input-group label {
+        margin-bottom: 5px;
+    }
+    .object-preview {
+        margin-bottom: 5px;
+    }
+
+    .game-button {
+        padding: 10px 20px;
+        font-size: 1em;
+    }
+    .button-group {
+        flex-direction: column;
+        gap: 15px;
+    }
+}

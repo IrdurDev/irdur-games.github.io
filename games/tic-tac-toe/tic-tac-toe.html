@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tic-Tac-Toe - Irdur Games</title>
+    <link rel="stylesheet" href="tic-tac-toe.css">
+    <!-- Enlace a Font Awesome para iconos (opcional, pero útil para una UI limpia) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <!-- Contenedor para las partículas de fondo animadas (X y O) -->
+    <div class="background-particles">
+        <div class="particle x-particle">X</div>
+        <div class="particle o-particle">O</div>
+        <div class="particle x-particle">X</div>
+        <div class="particle o-particle">O</div>
+        <div class="particle x-particle">X</div>
+        <div class="particle o-particle">O</div>
+        <div class="particle x-particle">X</div>
+        <div class="particle o-particle">O</div>
+        <div class="particle x-particle">X</div>
+        <div class="particle o-particle">O</div>
+    </div>
+
+    <div class="game-container">
+        <h1 class="game-title">Tic-Tac-Toe</h1>
+
+        <div class="difficulty-selection">
+            <h2>Selecciona Dificultad:</h2>
+            <button id="easyBtn" class="difficulty-btn" data-difficulty="easy">Fácil</button>
+            <button id="normalBtn" class="difficulty-btn" data-difficulty="intermediate">Intermedio</button>
+            <button id="hardBtn" class="difficulty-btn" data-difficulty="difficult">Difícil</button>
+        </div>
+
+        <div id="gameBoard" class="game-board">
+            <!-- Las celdas del tablero se generarán con JavaScript -->
+            <div class="cell" data-cell-index="0"></div>
+            <div class="cell" data-cell-index="1"></div>
+            <div class="cell" data-cell-index="2"></div>
+            <div class="cell" data-cell-index="3"></div>
+            <div class="cell" data-cell-index="4"></div>
+            <div class="cell" data-cell-index="5"></div>
+            <div class="cell" data-cell-index="6"></div>
+            <div class="cell" data-cell-index="7"></div>
+            <div class="cell" data-cell-index="8"></div>
+        </div>
+
+        <p id="gameStatus" class="game-status">¡Elige una dificultad para empezar!</p>
+        <button id="restartBtn" class="restart-btn" disabled>Reiniciar Juego</button>
+        <a href="../../index.html" class="back-home-btn">Regresar al Inicio</a>
+    </div>
+
+    <!-- Enlace al archivo JavaScript del juego -->
+    <script src="tic-tac-toe.js"></script>
+</body>
+</html>

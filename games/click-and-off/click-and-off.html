@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Click & Off - Luces Rotas</title>
+    <link rel="stylesheet" href="click-and-off.css">
+</head>
+<body>
+    <div class="background-glow"></div> <!-- Elemento para el brillo de fondo animado -->
+
+    <!-- Contenedor para las partículas de fondo animadas (cuadrados de luces) -->
+    <div class="background-particles-co">
+        <div class="particle-co square-particle-co color-1"></div>
+        <div class="particle-co square-particle-co color-2"></div>
+        <div class="particle-co square-particle-co color-3"></div>
+        <div class="particle-co square-particle-co color-4"></div>
+        <div class="particle-co square-particle-co color-1"></div>
+        <div class="particle-co square-particle-co color-2"></div>
+        <div class="particle-co square-particle-co color-3"></div>
+        <div class="particle-co square-particle-co color-4"></div>
+        <div class="particle-co square-particle-co color-1"></div>
+        <div class="particle-co square-particle-co color-2"></div>
+        <div class="particle-co square-particle-co color-3"></div>
+        <div class="particle-co square-particle-co color-4"></div>
+    </div>
+
+    <div class="game-container">
+        <h1 class="game-title">Click & Off - Luces Rotas</h1>
+        <p class="game-description">¡Haz clic en las luces ENCENDIDAS antes de que se apaguen!</p>
+        <p class="game-description-warning">Si haces clic en una LUZ APAGADA, ¡se romperá!</p>
+        <p class="game-description-warning">Si haces clic en una LUZ NEGRA, ¡te penalizará mucho!</p>
+        <p class="game-description-warning">Si haces clic en una LUZ ARCOÍRIS, ¡te beneficiará!</p>
+
+        <div class="game-info">
+            <div class="score-display">Puntuación: <span id="score">0</span></div>
+            <div class="broken-lights-display">Luces Rotas: <span id="brokenLights">0</span></div>
+            <div class="missed-lights-display">Luces Falladas: <span id="missedLights">0</span></div>
+            <div class="timer-display">Tiempo: <span id="timer">60</span>s</div>
+        </div>
+
+        <div class="game-area" id="gameArea">
+            <!-- 24 luces fijas predefinidas -->
+            <div class="light" data-light-id="0"></div>
+            <div class="light" data-light-id="1"></div>
+            <div class="light" data-light-id="2"></div>
+            <div class="light" data-light-id="3"></div>
+            <div class="light" data-light-id="4"></div>
+            <div class="light" data-light-id="5"></div>
+            <div class="light" data-light-id="6"></div>
+            <div class="light" data-light-id="7"></div>
+            <div class="light" data-light-id="8"></div>
+            <div class="light" data-light-id="9"></div>
+            <div class="light" data-light-id="10"></div>
+            <div class="light" data-light-id="11"></div>
+            <div class="light" data-light-id="12"></div>
+            <div class="light" data-light-id="13"></div>
+            <div class="light" data-light-id="14"></div>
+            <div class="light" data-light-id="15"></div>
+            <div class="light" data-light-id="16"></div>
+            <div class="light" data-light-id="17"></div>
+            <div class="light" data-light-id="18"></div>
+            <div class="light" data-light-id="19"></div>
+            <div class="light" data-light-id="20"></div>
+            <div class="light" data-light-id="21"></div>
+            <div class="light" data-light-id="22"></div>
+            <div class="light" data-light-id="23"></div>
+
+            <!-- Overlay de fin de juego -->
+            <div id="gameOverOverlay" class="game-over-overlay">
+                <p id="overlayMessage" class="overlay-message"></p>
+            </div>
+        </div>
+
+        <p class="game-status-message" id="gameStatusMessage">Presiona "Iniciar Juego" para comenzar.</p>
+
+        <div class="button-group">
+            <button id="startButton" class="game-button start-button">Iniciar Juego</button>
+            <button id="restartButton" class="game-button restart-button" disabled>Reiniciar</button>
+            <a href="../../index.html" class="game-button back-home-button">Regresar al Inicio</a>
+        </div>
+    </div>
+
+    <script src="click-and-off.js"></script>
+</body>
+</html>
